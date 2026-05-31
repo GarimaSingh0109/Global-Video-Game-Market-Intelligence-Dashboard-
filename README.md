@@ -1,22 +1,21 @@
+# 🎮 Global-Video-Game-Market-Intelligence-Dashboard
 
-# 🎮  Global-Video-Game-Market-Intelligence-Dashboard-
-
-> An interactive Power BI dashboard analyzing global video game sales across platforms, genres, publishers, and regions — built on a dataset of **51,646 games** from **3,385 publishers**, totalling **₹5,080.71 Million** in global sales.
+> An interactive **Excel dashboard** analyzing global video game sales across platforms, genres, publishers, and regions — built on a dataset of **51,646 games** from **3,385 publishers**, totalling **₹5,080.71 Million** in global sales.
 
 ---
 
 ## 📊 Dashboard Overview
 
-The dashboard provides a comprehensive view of the video game market through six key visualizations, a dynamic filter panel, and a live insights panel.
+The dashboard is built entirely in **Microsoft Excel** using pivot tables, slicers, and native Excel charts — no external tools or add-ins required.
 
-| Section | Description |
-|---|---|
-| **Global Sales Over Time** | Line chart tracking physical retail sales from 1971 to 2023 |
-| **Top 10 Best Selling Games** | Bar chart of all-time bestsellers by global units sold |
-| **Sales By Console** | Platform comparison across DS, GBA, PS, PS2, PS3, PS4, PSP, Wii, X360, XB |
-| **Sales By Genre** | Horizontal bar chart ranking Sports, Shooter, Racing, Misc, and Action |
-| **Genre Performance Across Regions** | Multi-line chart comparing NA, JP, and PAL sales per genre |
-| **Insights & Recommendations** | Static panel summarising the 5 key strategic findings |
+| Section | Chart Type | Description |
+|---|---|---|
+| **Global Sales Over Time** | Line Chart | Physical retail sales trend from 1971 to 2023 |
+| **Top 10 Best Selling Games** | Column Chart | All-time bestsellers by global units sold |
+| **Sales By Console** | Column Chart | Platform comparison across DS, PS2, PS3, PS4, Wii, X360 and more |
+| **Sales By Genre** | Horizontal Bar | Sports, Shooter, Racing, Misc, and Action ranked by volume |
+| **Genre Performance Across Regions** | Multi-Line Chart | NA, JP, and PAL sales compared per genre |
+| **Insights & Recommendations** | Text Box | 5 strategic findings embedded directly in the dashboard |
 
 ---
 
@@ -30,39 +29,60 @@ The dashboard provides a comprehensive view of the video game market through six
 | Average Critic Score | 7.20 / 10 |
 | Year Range | 1971 – 2023 |
 
-> **Note:** Sales figures represent **physical retail** only. Digital distribution (Steam, PSN, Xbox Store) is not included, which significantly underrepresents post-2013 market activity.
+> **Note:** Sales figures represent **physical retail** only. Digital distribution (Steam, PSN, Xbox Store) is not captured, which significantly underrepresents post-2013 market activity.
 
 ---
 
-## 🔍 Key Insights & Recommendations
+## 📁 Repository Structure
 
-**1. Fix the data gap** — Integrate digital sales (Steam, PSN, Xbox) since the post-2013 cliff reflects missing data, not a real market collapse.
-
-**2. Consolidate platform bets** — PS2's 1.7× lead (₹959.97M) proves platform concentration drives outsized revenue; identify and lock in today's equivalent dominant platform.
-
-**3. Go all-in on Sports & Action for NA/PAL** — Top genres + top regions = highest ROI; deprioritize or localize separately for Japan.
-
-**4. Chase open-world deals** — GTA V at 39.71M units (2× the next title) proves the open-world formula is the only reliable path to breakout sales.
-
-**5. Allocate budgets by region signal** — NA first, PAL second, Japan last; the regional gap is a resource allocation guide, not a problem to fix.
+```
+📦 vg-sales-dashboard
+ ┣ 📊 VideoGameSales.xlsx        # Excel dashboard (main file)
+ ┣ 📄 vgsales.csv                # Raw source dataset
+ ┣ 🖼️ dashboard_preview.png      # Dashboard screenshot
+ ┗ 📖 README.md                  # This file
+```
 
 ---
 
-## 🎛️ Filters
+## 🚀 Getting Started
 
-The left-hand panel supports dynamic filtering by:
+1. Clone this repository
+   ```bash
+   git clone https://github.com/your-username/vg-sales-dashboard.git
+   ```
+2. Open `VideoGameSales.xlsx` in **Microsoft Excel** (2016 or later recommended)
+3. If prompted, click **Enable Content** to allow slicers and pivot tables to refresh
+4. Use the **Publisher**, **Genre**, and **Console** slicers on the left panel to filter all charts dynamically
 
-- **Publisher** — filter by individual publisher (e.g. AAA, Abbey Games, Absolute Entertainment)
+---
+
+## 🎛️ Filters (Slicers)
+
+The left-hand panel contains three Excel slicers for interactive filtering:
+
+- **Publisher** — e.g. AAA, Abbey Games, Absolute Entertainment, Activision
 - **Genre** — Action, Action-Adventure, Adventure, Board Game, Education, Fighting, Misc, MMO
 - **Console** — SAT, 2600, 3DO, 3DS, 5200, 7800, Ace, ACPC, and more
 
-All charts update dynamically when filters are applied.
+All charts and KPI cards update instantly when a slicer selection is changed.
+
+---
+
+## 📌 KPI Cards (Header)
+
+| KPI | Value |
+|---|---|
+| Total Global Sales | ₹5,080.71 Million |
+| Total Games | 51,646 |
+| Total Publishers | 3,385 |
+| Average Critic Score | 7.20 / 10 |
 
 ---
 
 ## 🏆 Top 10 Best Selling Games
 
-| Rank | Game | Sales (M) |
+| Rank | Game | Sales (M units) |
 |---|---|---|
 | 1 | Grand Theft Auto V | 39.71 |
 | 2 | Red Dead Redemption 2 | 24.01 |
@@ -86,7 +106,7 @@ All charts update dynamically when filters are applied.
 | PS3 | 523.46 |
 | X360 | 523.74 |
 | DS | 380.53 |
-| PS4 | 473.8 |
+| PS4 | 473.80 |
 | Wii | 361.52 |
 | GBA | 200.11 |
 | PSP | 189.97 |
@@ -96,51 +116,39 @@ All charts update dynamically when filters are applied.
 
 ## 🌍 Regional Performance
 
-| Region | Strength |
+| Region | Performance |
 |---|---|
 | **North America (NA)** | Dominant across all genres |
-| **PAL (Europe/Australia)** | Strong second — closely tracks NA |
+| **PAL (Europe / Australia)** | Strong second — closely tracks NA |
 | **Japan (JP)** | Consistently lowest; distinct genre preferences |
+
+---
+
+## 🔍 Key Insights & Recommendations
+
+**1. Fix the data gap** — Integrate digital sales (Steam, PSN, Xbox) since the post-2013 cliff reflects missing data, not a real market collapse.
+
+**2. Consolidate platform bets** — PS2's 1.7× lead (₹959.97M) proves platform concentration drives outsized revenue; identify and lock in today's equivalent dominant platform.
+
+**3. Go all-in on Sports & Action for NA/PAL** — Top genres + top regions = highest ROI; deprioritize or localize separately for Japan.
+
+**4. Chase open-world deals** — GTA V at 39.71M units (2× the next title) proves the open-world formula is the only reliable path to breakout sales.
+
+**5. Allocate budgets by region signal** — NA first, PAL second, Japan last; the regional gap is a resource allocation guide, not a problem to fix.
 
 ---
 
 ## 🛠️ Built With
 
-- **Power BI Desktop** — dashboard design and interactivity
-- **DAX** — calculated measures and KPIs
-- **Power Query** — data cleaning and transformation
+- **Microsoft Excel** — pivot tables, slicers, charts, and dashboard layout
+- **Power Query** *(optional)* — data cleaning and import from CSV
 
 ---
 
-## 📁 Repository Structure
+## ⚙️ Requirements
 
-```
-📦 vg-sales-dashboard
- ┣ 📊 VideoGameSales.pbix       # Power BI dashboard file
- ┣ 📄 vgsales.csv               # Raw dataset
- ┣ 🖼️ dashboard_preview.png     # Dashboard screenshot
- ┗ 📖 README.md                 # This file
-```
-
----
-
-## 🚀 Getting Started
-
-1. Clone this repository
-   ```bash
-   git clone https://github.com/your-username/vg-sales-dashboard.git
-   ```
-2. Open `VideoGameSales.pbix` in **Power BI Desktop**
-3. If prompted, refresh the data source and point it to `vgsales.csv`
-4. Use the left-hand filter panel to explore by publisher, genre, or console
-
----
-
-## 📌 Notes
-
-- All monetary values are in **Indian Rupees (₹)** as displayed in the dashboard
-- Critic scores are sourced from Metacritic aggregates where available
-- Post-2013 data should be treated with caution due to the digital sales gap
+- Microsoft Excel **2016 or later** (for slicer and pivot table compatibility)
+- Macros do **not** need to be enabled — the dashboard uses only native Excel features
 
 ---
 
